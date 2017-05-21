@@ -1,0 +1,100 @@
+/** Variables **/
+$twitter: #00aced;
+$facebook: #3b5998;
+$googleplus: #cd2029;
+$linkedin: #007bb6;
+$youtube: #bb0000;
+
+/***** CONNECT-SECTION *****/
+.connect-section
+	background-color: #ff4f4f
+	text-align: center
+	padding: 45px
+
+	h1  //connect0-title
+		margin: 0
+		padding: 0
+		color: black
+
+	.connect-row
+		display: flex
+		flex-direction: row
+		justify-content: center
+		//margin-top: 25px
+
+		@media (max-width:768px)
+			flex-wrap: wrap
+
+
+		.col1, .col2, .col3, .col4
+			margin: 4%
+			width: 100px
+			height: 100px
+			align-items: center
+			line-height: 100px
+			text-align: center
+			background: #FFF
+			border-radius: 50%
+			position: relative
+			overflow: hidden
+			z-index: 1
+			transition: 0.2s ease-in-out
+
+
+			a
+				text-decoration: none
+				color: black
+				cursor: pointer
+				font-size: 60px
+
+
+			a:before
+				content: ''
+				width: 100%
+				height: 100%
+				position: absolute
+				top: 0
+				left: 0
+				//left: -100%
+				background: #ccc
+				z-index: -1
+				border-radius: 50%
+				transform: scale(0)
+				transition: 0.2s ease-in-out
+
+			a:after
+				content: ''
+				width: 50%
+				height: 100%
+				position: absolute
+				right: -100%
+				top: 0%
+				background: rgba(255,255,255,0.3)
+				transition: 0.3s ease-in-out
+				transition-delay: 0.1s
+
+			a:hover:before
+				//left: 0
+				transform: scale(0.9)
+
+			a:hover:after
+				right: 0%
+
+			a .fa
+				transition: 0.2s ease-in-out
+
+			a:hover .fa
+				color: #FFF
+
+		.col1 a:before
+			background: $twitter
+
+		.col2 a:before
+			background: $facebook
+
+		.col3 a:before
+			background: $linkedin
+
+		.col4 a:before
+			background: $googleplus
+

@@ -1,0 +1,134 @@
+/***** NAVBAR *****/
+
+$navbar-text: black;
+
+*
+	margin: 0
+	padding: 0
+
+/*****  NAVBAR  *****/
+.nav-container
+	top: 0
+	width: 100%
+	.navbar
+		position: fixed
+		z-index: 2
+		width: 100%
+		padding: 0
+		margin: 0
+		display: flex
+		flex-direction: row
+		height: 60px
+		background-color: transparent
+		//rgba(50,177,235,0.3)
+		.logo
+			flex: 1
+			margin: 0 0 7px 36px
+			.brand-logo //<a> tag
+				font-family: lobster
+				font-size: 36px
+				text-decoration: none
+				color: $navbar-text
+
+		.nav-menu
+			flex: 2
+			margin-right: 10px;
+			ul
+				list-style: none
+				text-align: right
+				padding-right: 25px
+
+				li
+					display: inline-block
+					text-align: center
+					width: 100px
+					padding: 14px 0 14px 0
+					a
+						text-decoration: none
+						color: $navbar-text
+						font-size: 22px
+				li:nth-last-child(1)
+					width: 115px
+				.active
+					background-color: grey
+				li:hover
+					background-color: grey
+
+		.collapsed-nav
+			display: none
+			cursor: pointer
+
+	.toogle-navbar
+		display: block
+		position: fixed
+		top: 50px
+		width: 100%
+		background-color: rgba(120,120,158,0.7)
+		transform: translateX(-100%)
+		transition: transform 0.4s ease-in-out
+		ul
+			list-style: none
+			text-align: center
+			margin: 0
+			li
+				border-bottom: 2px solid black
+				margin: 0
+				padding: 10px 0 10px 0
+				a
+					text-decoration: none
+					color: white
+					font-size: 26px
+			.active	a
+					color: black
+				
+	.is-open
+		transform: translateX(0)
+
+@media (max-width:768px)
+	.nav-container
+		.navbar
+			height: 40px
+			.logo
+				margin: 0 0 0 25px
+				.brand-logo //<a> tag
+					font-size: 30px
+
+			.nav-menu
+				display: none
+
+			.collapsed-nav
+				width: 40px
+				height: 40px
+				margin-right: 20px
+				display: flex
+				align-items: center
+				
+				span,
+				span:before, 
+				span:after
+					content: ""
+					display: inline-block
+					height: 3px
+					width: 100%
+					background: #333
+					position: relative
+					transition: all 0.3s ease-in-out
+					
+				span:before
+					top: -24px
+
+				span:after
+					top: -20px
+
+				&.is-open span
+					background-color: transparent
+
+				&.is-open span:after
+					top: -30px
+					transform-origin: center
+					transform: rotate(45deg)
+
+				&.is-open span:before
+					transform-origin: center
+					transform: rotate(-45deg)
+					top: -10px

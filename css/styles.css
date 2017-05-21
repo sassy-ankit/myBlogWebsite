@@ -1,0 +1,324 @@
+/***** NAVBAR *****/
+* {
+  margin: 0;
+  padding: 0; }
+
+/*****  NAVBAR  *****/
+.nav-container {
+  top: 0;
+  width: 100%; }
+  .nav-container .navbar {
+    position: fixed;
+    z-index: 2;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    height: 60px;
+    background-color: transparent; }
+    .nav-container .navbar .logo {
+      flex: 1;
+      margin: 0 0 7px 36px; }
+      .nav-container .navbar .logo .brand-logo {
+        font-family: lobster;
+        font-size: 36px;
+        text-decoration: none;
+        color: black; }
+    .nav-container .navbar .nav-menu {
+      flex: 2;
+      margin-right: 10px; }
+      .nav-container .navbar .nav-menu ul {
+        list-style: none;
+        text-align: right;
+        padding-right: 25px; }
+        .nav-container .navbar .nav-menu ul li {
+          display: inline-block;
+          text-align: center;
+          width: 100px;
+          padding: 14px 0 14px 0; }
+          .nav-container .navbar .nav-menu ul li a {
+            text-decoration: none;
+            color: black;
+            font-size: 22px; }
+        .nav-container .navbar .nav-menu ul li:nth-last-child(1) {
+          width: 115px; }
+        .nav-container .navbar .nav-menu ul .active {
+          background-color: grey; }
+        .nav-container .navbar .nav-menu ul li:hover {
+          background-color: grey; }
+    .nav-container .navbar .collapsed-nav {
+      display: none;
+      cursor: pointer; }
+  .nav-container .toogle-navbar {
+    display: block;
+    position: fixed;
+    top: 50px;
+    width: 100%;
+    background-color: rgba(120, 120, 158, 0.7);
+    transform: translateX(-100%);
+    transition: transform 0.4s ease-in-out; }
+    .nav-container .toogle-navbar ul {
+      list-style: none;
+      text-align: center;
+      margin: 0; }
+      .nav-container .toogle-navbar ul li {
+        border-bottom: 2px solid black;
+        margin: 0;
+        padding: 10px 0 10px 0; }
+        .nav-container .toogle-navbar ul li a {
+          text-decoration: none;
+          color: white;
+          font-size: 26px; }
+      .nav-container .toogle-navbar ul .active a {
+        color: black; }
+  .nav-container .is-open {
+    transform: translateX(0); }
+
+@media (max-width: 768px) {
+  .nav-container .navbar {
+    height: 40px; }
+    .nav-container .navbar .logo {
+      margin: 0 0 0 25px; }
+      .nav-container .navbar .logo .brand-logo {
+        font-size: 30px; }
+    .nav-container .navbar .nav-menu {
+      display: none; }
+    .nav-container .navbar .collapsed-nav {
+      width: 40px;
+      height: 40px;
+      margin-right: 20px;
+      display: flex;
+      align-items: center; }
+      .nav-container .navbar .collapsed-nav span,
+      .nav-container .navbar .collapsed-nav span:before,
+      .nav-container .navbar .collapsed-nav span:after {
+        content: "";
+        display: inline-block;
+        height: 3px;
+        width: 100%;
+        background: #333;
+        position: relative;
+        transition: all 0.3s ease-in-out; }
+      .nav-container .navbar .collapsed-nav span:before {
+        top: -24px; }
+      .nav-container .navbar .collapsed-nav span:after {
+        top: -20px; }
+      .nav-container .navbar .collapsed-nav.is-open span {
+        background-color: transparent; }
+      .nav-container .navbar .collapsed-nav.is-open span:after {
+        top: -30px;
+        transform-origin: center;
+        transform: rotate(45deg); }
+      .nav-container .navbar .collapsed-nav.is-open span:before {
+        transform-origin: center;
+        transform: rotate(-45deg);
+        top: -10px; } }
+
+.modal {
+  display: block;
+  position: fixed;
+  z-index: 3;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: #8784f0;
+  background-color: rgba(135, 132, 240, 0.4);
+  text-align: center; }
+  .modal .modal-content {
+    background-color: #8784f0;
+    margin: 15% auto;
+    padding: 20px;
+    border: none;
+    border-radius: 15px;
+    width: 80%; }
+    .modal .modal-content p {
+      font-family: lobster;
+      font-size: 56px; }
+  .modal .close {
+    color: black;
+    font-size: 65px;
+    font-weight: bold; }
+  .modal .close:hover,
+  .modal .close:focus {
+    color: rgba(0, 0, 0, 0.1);
+    text-decoration: none;
+    cursor: pointer; }
+
+/**** HERO UNIT ****/
+.hero-unit img {
+  background-color: #444;
+  background-blend-mode: overlay;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; }
+
+.hero-unit h1 {
+  width: 75%;
+  text-align: center;
+  font-family: lobster;
+  font-size: 54px;
+  font-weight: bolder;
+  color: black;
+  margin: 0 auto;
+  padding-top: 20%;
+  padding-bottom: 20%; }
+  .hero-unit h1 .tag-line {
+    font-size: 24px;
+    margin-top: 10px;
+    padding-top: 0; }
+
+@media (max-width: 768px) {
+  .hero-unit {
+    flex-direction: column; } }
+
+/***** SECTION RECENT-BLOG *****/
+.recent-blogs {
+  display: block;
+  position: relative;
+  text-align: center;
+  background-color: #efefef;
+  padding: 25px; }
+  .recent-blogs .row {
+    display: flex;
+    flex-direction: row; }
+    .recent-blogs .row .col1, .recent-blogs .row .col2, .recent-blogs .row .col3 {
+      background-color: #ddd;
+      border: 2px solid #565656;
+      border-radius: 10px;
+      flex: 1;
+      margin: 5px;
+      padding: 20px;
+      text-align: center; }
+    .recent-blogs .row img {
+      width: 75%; }
+    .recent-blogs .row .content-breif {
+      text-align: justify; }
+    .recent-blogs .row .btn-cta {
+      text-decoration: none;
+      background-color: red;
+      color: white;
+      border-radius: 10px;
+      padding: 7px 15px;
+      box-shadow: 4px 4px 2px #888888;
+      transition: all 0.1s ease-out; }
+      .recent-blogs .row .btn-cta:hover {
+        font-weight: bolder;
+        background-color: rgba(255, 0, 0, 0.8);
+        box-shadow: 4px 4px 6px #888888;
+        padding: 9px 17px; }
+
+@media (max-width: 768px) {
+  .recent-blogs .row {
+    flex-direction: column; }
+    .recent-blogs .row img {
+      width: 45%; }
+    .recent-blogs .row .col1, .recent-blogs .row .col2, .recent-blogs .row .col3 {
+      padding-bottom: 20px; } }
+
+/***** ABOUT-SECTION *****/
+.about-section {
+  display: block;
+  background-color: #222; }
+  .about-section .about-bg {
+    margin-bottom: 0;
+    background: url(../img/pic3.jpg) no-repeat center center fixed;
+    background-color: #BBB;
+    background-blend-mode: multiply;
+    background-size: cover;
+    padding: 50px;
+    text-align: center; }
+    .about-section .about-bg .about-title {
+      font-family: lobster;
+      color: white; }
+      .about-section .about-bg .about-title h1 {
+        font-size: 84px; }
+    .about-section .about-bg hr {
+      width: 70%;
+      height: 2px;
+      margin: 0 auto;
+      background-color: white;
+      border: none; }
+    .about-section .about-bg .about-text {
+      font-family: "Comic Sans MS", cursive, sans-serif;
+      color: white;
+      font-weight: bold;
+      font-size: 18px; }
+
+/** Variables **/
+/***** CONNECT-SECTION *****/
+.connect-section {
+  background-color: #ff4f4f;
+  text-align: center;
+  padding: 45px; }
+  .connect-section h1 {
+    margin: 0;
+    padding: 0;
+    color: black; }
+  .connect-section .connect-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center; }
+    @media (max-width: 768px) {
+      .connect-section .connect-row {
+        flex-wrap: wrap; } }
+    .connect-section .connect-row .col1, .connect-section .connect-row .col2, .connect-section .connect-row .col3, .connect-section .connect-row .col4 {
+      margin: 4%;
+      width: 100px;
+      height: 100px;
+      align-items: center;
+      line-height: 100px;
+      text-align: center;
+      background: #FFF;
+      border-radius: 50%;
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
+      transition: 0.2s ease-in-out; }
+      .connect-section .connect-row .col1 a, .connect-section .connect-row .col2 a, .connect-section .connect-row .col3 a, .connect-section .connect-row .col4 a {
+        text-decoration: none;
+        color: black;
+        cursor: pointer;
+        font-size: 60px; }
+      .connect-section .connect-row .col1 a:before, .connect-section .connect-row .col2 a:before, .connect-section .connect-row .col3 a:before, .connect-section .connect-row .col4 a:before {
+        content: '';
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: #ccc;
+        z-index: -1;
+        border-radius: 50%;
+        transform: scale(0);
+        transition: 0.2s ease-in-out; }
+      .connect-section .connect-row .col1 a:after, .connect-section .connect-row .col2 a:after, .connect-section .connect-row .col3 a:after, .connect-section .connect-row .col4 a:after {
+        content: '';
+        width: 50%;
+        height: 100%;
+        position: absolute;
+        right: -100%;
+        top: 0%;
+        background: rgba(255, 255, 255, 0.3);
+        transition: 0.3s ease-in-out;
+        transition-delay: 0.1s; }
+      .connect-section .connect-row .col1 a:hover:before, .connect-section .connect-row .col2 a:hover:before, .connect-section .connect-row .col3 a:hover:before, .connect-section .connect-row .col4 a:hover:before {
+        transform: scale(0.9); }
+      .connect-section .connect-row .col1 a:hover:after, .connect-section .connect-row .col2 a:hover:after, .connect-section .connect-row .col3 a:hover:after, .connect-section .connect-row .col4 a:hover:after {
+        right: 0%; }
+      .connect-section .connect-row .col1 a .fa, .connect-section .connect-row .col2 a .fa, .connect-section .connect-row .col3 a .fa, .connect-section .connect-row .col4 a .fa {
+        transition: 0.2s ease-in-out; }
+      .connect-section .connect-row .col1 a:hover .fa, .connect-section .connect-row .col2 a:hover .fa, .connect-section .connect-row .col3 a:hover .fa, .connect-section .connect-row .col4 a:hover .fa {
+        color: #FFF; }
+    .connect-section .connect-row .col1 a:before {
+      background: #00aced; }
+    .connect-section .connect-row .col2 a:before {
+      background: #3b5998; }
+    .connect-section .connect-row .col3 a:before {
+      background: #007bb6; }
+    .connect-section .connect-row .col4 a:before {
+      background: #cd2029; }

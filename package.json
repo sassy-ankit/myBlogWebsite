@@ -1,0 +1,33 @@
+{
+  "name": "ankitchheda.com",
+  "version": "1.0.0",
+  "description": "My personal blog and portfolio site",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/github.com/*.git"
+  },
+  "keywords": [
+    "gulp",
+    "sass",
+    "bootstrap",
+    "customization",
+    "parallax"
+  ],
+  "author": "Ankitkumar Chheda (twitter.com/sassy-ankit)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/github.com/*/issues"
+  },
+  "homepage": "https://github.com/github.com/*#readme",
+  "devDependencies": {
+    "browser-sync": "^2.18.11",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^4.0.0",
+    "gulp-plumber": "^1.1.0",
+    "gulp-sass": "^3.1.0"
+  }
+}

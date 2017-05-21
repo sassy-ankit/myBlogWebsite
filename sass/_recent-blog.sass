@@ -1,0 +1,50 @@
+/***** SECTION RECENT-BLOG *****/
+.recent-blogs
+	display: block
+	position: relative
+	text-align: center
+	background-color: #efefef
+	padding: 25px
+
+	.row
+		display: flex
+		flex-direction: row
+
+		.col1, .col2, .col3
+			background-color: #ddd
+			border: 2px solid #565656
+			border-radius: 10px
+			flex: 1
+			margin: 5px
+			padding: 20px
+			text-align: center
+
+		img
+			width: 75%
+
+		.content-breif
+			text-align: justify
+
+		.btn-cta
+			text-decoration: none
+			background-color: red
+			color: white
+			border-radius: 10px
+			padding: 7px 15px
+			box-shadow: 4px 4px 2px #888888
+			transition: all 0.1s ease-out
+
+			&:hover
+				font-weight: bolder
+				background-color: rgba(255,0,0,0.8)
+				box-shadow: 4px 4px 6px #888888
+				padding: 9px 17px
+
+@media (max-width:768px)
+	.recent-blogs
+		.row
+			flex-direction: column
+			img
+				width: 45%
+			.col1,.col2,.col3
+				padding-bottom: 20px

@@ -1,0 +1,87 @@
+/************************************************
+**		       1. DEPENDENCIES
+************************************************/
+var gulp = require('gulp');					//gulp core
+
+/* files required for SASS */
+var sass = require('gulp-sass');			//sass complier
+var plumber = require('gulp-plumber');		//disable interruption
+var autoprefix = require('gulp-autoprefixer');
+
+/* files required for additional support */
+var browserSync = require('browser-sync');	//inject code to browser
+
+/************************************************
+**               2. GULP TASKS
+*************************************************/
+gulp.task('sass',function(){
+	gulp.src("sass/*.sass")					//get the source folder
+	.pipe(plumber())						
+								//make gulp keeps running on errors
+	.pipe(sass())							//compile all SASS
+	.pipe(autoprefix(						//compile css with prefixes
+		'last 2 version','> 1%','ie 8','ie 9','ios 6','android 4'
+	))
+	.pipe(gulp.dest("build/css/"))			//output folder
+	.pipe(browserSync.reload({stream:true}))
+	console.log('## SASS processed! ##');
+});
+
+gulp.task('watch', function(){
+	gulp.watch('sass/*.sass',['sass']);
+	gulp.watch('./*.html').on('change', browserSync.reload());
+});
+
+/************************************************
+**              3. BROWSER-SYNC
+*************************************************/
+gulp.task('browser-sync',['sass'],function(){
+	browserSync.init(['build/css/*.css','build/js/*.js'], {
+		server :{baseDir : './'}
+	});
+});
+
+/************************************************
+**               4. GULP DEFAULT
+*************************************************/
+gulp.task('watch', ['sass','browser-sync']);
+
+
+
+
+/************************************************
+**               5. GULP DEFAULT
+*************************************************/
+gulp.task('default', ['browser-sync','watch']);
+
+
+
+/************************************************
+	   FILES STRUCTURE SHOULD LOOK LIKE THIS 
+var target ={
+	sass_src: 'sass/*.sass',
+	css_dest: 'build/css/',
+
+	js_lint_src : [
+		'js/build/app.js',
+		'js/build/custom/switch.js',
+		'js/build/custom/scheme-loader.js'
+	],
+
+	js_uglify_src : [
+		'js/build/custom/scheme-loader.js',
+		'js/build/vender/modernizer.js'
+	],
+
+	js_concat_src : [
+		'js/build/vender/skroller.js',
+		'js/build/vender/jquery.fitvids.js',
+		'js/build/vender/ghosthunter.js',
+		'js/build/vender/jquery.cookie.js',
+		'js/build/custom/switch.js',
+		'js/build/app.js'
+	],
+
+	js_dest : 'js'
+};
+*************************************************/
