@@ -20,6 +20,7 @@ gulp.task('sass', function() {
         .pipe(sass())
         .pipe(gulp.dest("css"))
         .pipe(browserSync.stream());
+        .pipe(gulp.dest("_site/css/"))
 });
 
 gulp.task('default', ['serve']);

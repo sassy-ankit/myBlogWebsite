@@ -38,6 +38,9 @@ build/Release
 # Dependency directories
 node_modules/
 jspm_packages/
+extra-resources/
+uploads_on_server/
+font-awesome/
 
 # Typescript v1 declaration files
 typings/
